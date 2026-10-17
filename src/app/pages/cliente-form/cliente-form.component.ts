@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Cliente } from '../../model/cliente';
+import { ClienteService } from '../../services/cliente.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cliente-form',
@@ -9,25 +12,28 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './cliente-form.component.css'
 })
 export class ClienteFormComponent {
-  cliente = {
-    cpf: '',
-    nome: '',
-    sobrenome: '',
-    dataNascimento: '',
-    email: '',
-    senha: '',
-    confirmarSenha: ''
-  };
 
-  cadastrar() {
+  //Defino um objeto cliente vazio para armazenar os dados do formulário
+  cliente: Cliente = {} as Cliente;
+  private service = inject(ClienteService);
+  private router = inject(Router);
 
-    if (this.cliente.senha !== this.cliente.confirmarSenha) {
+  confirmarSenha: string = '';
+
+  salvar() {
+
+    if (this.cliente.senha !== this.confirmarSenha) {
       alert('As senhas não são iguais.');
       return;
     }
 
-    alert(`Cliente ${this.cliente.nome} cadastrado com sucesso!`);
+    this.service.incluir(this.cliente).subscribe({
+      next: (cliente) => {
+        this.cliente = cliente;
+        alert(`Cliente ${this.cliente.nome} cadastrado com sucesso!`);
+        this.router.navigate(['/admin-clientes-listar']);
+      }
+    });
 
-    console.log(this.cliente);
   }
 }

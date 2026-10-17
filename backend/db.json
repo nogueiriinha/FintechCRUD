@@ -1,0 +1,23 @@
+{
+  "clientes": [
+    {
+      "cpf": "12345678910",
+      "nome": "Lorenzo",
+      "sobrenome": "Santos",
+      "dtNascimento": "2001-01-17",
+      "email": "lorenzo@email.com",
+      "senha": "123",
+      "id": "1iNEI8-iWcQ"
+    },
+    {
+      "cpf": "10987654321",
+      "nome": "Ana",
+      "sobrenome": "Santos",
+      "dtNascimento": "2008-06-17",
+      "email": "ana@email.com",
+      "senha": "123",
+      "id": "c_0Yd7hcGy4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

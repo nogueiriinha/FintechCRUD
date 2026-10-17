@@ -44,7 +44,7 @@
       id="dataNascimento"
       name="dataNascimento"
       type="date"
-      [(ngModel)]="cliente.dataNascimento"
+      [(ngModel)]="cliente.dtNascimento"
     />
 
     <label for="email">Email</label>
@@ -53,6 +53,7 @@
       id="email"
       name="email"
       type="email"
+      autocomplete="username"
       placeholder="Digite seu email"
       [(ngModel)]="cliente.email"
     />
@@ -63,6 +64,7 @@
       id="senha"
       name="senha"
       type="password"
+      autocomplete="new-password"
       placeholder="Digite sua senha"
       [(ngModel)]="cliente.senha"
     />
@@ -73,15 +75,16 @@
       id="confirmarSenha"
       name="confirmarSenha"
       type="password"
+      autocomplete="new-password"
       placeholder="Confirme sua senha"
-      [(ngModel)]="cliente.confirmarSenha"
+      [(ngModel)]="confirmarSenha"
     />
 
     <button
       type="button"
       class="input-submeter"
-      (click)="cadastrar()">
-      Cadastrar
+      (click)="salvar()">
+      Confirmar
     </button>
 
   </form>
