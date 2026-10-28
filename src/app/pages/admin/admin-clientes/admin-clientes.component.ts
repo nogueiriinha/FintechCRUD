@@ -18,7 +18,8 @@ export class AdminClientesComponent implements OnInit {
 
   ngOnInit():void{
     this.service.listar().subscribe({
-      next:(clientes)=>{
+      //após receber a lista de clientes do serviço, atualiza a propriedade listaClientes
+      next: (clientes) => {
         this.listaClientes = clientes;
       }
     });
@@ -29,8 +30,15 @@ export class AdminClientesComponent implements OnInit {
   }
 
   excluir(id: string) {
-    this.service.excluir(id).subscribe({
-      next: ()=> {this.listaClientes = this.listaClientes.filter(cliente => cliente.id !== id)}
-    })
+
+    if(id !== undefined && confirm('Deseja realmente excluir o cliente?')) {
+      this.service.excluir(id).subscribe({
+        next: () => {
+          //Recarregar a lista de clientes após a exclusão
+          this.listaClientes = this.listaClientes.filter(cliente => cliente.id !== id);
+        }
+      }); 
+    }
   }
+
 }

@@ -1,21 +1,23 @@
 {
   "clientes": [
     {
-      "id": "1",
-      "nome": "Ana",
-      "sobrenome": "Silva",
       "cpf": "12345678910",
-      "email": "ana@email.com",
-      "dtNascimento": "2005-03-10"
+      "nome": "Lorenzo",
+      "sobrenome": "Santos",
+      "dtNascimento": "2002-01-17",
+      "email": "lorenzo@email.com",
+      "senha": "123",
+      "id": "1iNEI8-iWcQ"
     },
     {
-      "cpf": "32131321",
-      "nome": "Rafa",
-      "sobrenome": "Fandangueiro",
-      "dtNascimento": "1988-12-13",
-      "email": "rafa@email.com",
-      "senha": "12",
-      "id": "QSFhHJd"
+      "cpf": "10987654321",
+      "nome": "Ana",
+      "sobrenome": "Santos",
+      "dtNascimento": "2000-06-17",
+      "email": "ana@email.com",
+      "senha": "123",
+      "id": "c_0Yd7hcGy4"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

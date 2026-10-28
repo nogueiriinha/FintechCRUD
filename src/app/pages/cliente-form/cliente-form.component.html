@@ -8,6 +8,12 @@
       Preencha os dados abaixo para criar seu cadastro.
     </p>
 
+    @if(clienteId){
+      <label for="id">ID</label>
+      <input class="input-simples" type="text" 
+      name="id" id="id" [ngModel]="cliente.id" disabled />
+    }
+
     <label for="cpf">CPF</label>
     <input
       class="input-simples"
@@ -53,6 +59,7 @@
       id="email"
       name="email"
       type="email"
+      autocomplete="username"
       placeholder="Digite seu email"
       [(ngModel)]="cliente.email"
     />
@@ -63,6 +70,7 @@
       id="senha"
       name="senha"
       type="password"
+      autocomplete="new-password"
       placeholder="Digite sua senha"
       [(ngModel)]="cliente.senha"
     />
@@ -73,6 +81,7 @@
       id="confirmarSenha"
       name="confirmarSenha"
       type="password"
+      autocomplete="new-password"
       placeholder="Confirme sua senha"
       [(ngModel)]="confirmarSenha"
     />
@@ -81,7 +90,7 @@
       type="button"
       class="input-submeter"
       (click)="salvar()">
-      Cadastrar
+      Confirmar
     </button>
 
   </form>

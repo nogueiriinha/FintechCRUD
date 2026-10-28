@@ -12,7 +12,8 @@
     </div>
 
     <button
-      class="botao-novo" routerLink="/cliente-cadastro"
+      class="botao-novo"
+      routerLink="/cliente-cadastro"
       type="button">
       + Novo cliente
     </button>
@@ -44,7 +45,7 @@
               <button
                 class="botao-editar"
                 type="button"
-                (click)="editar(cliente.id)">
+                [routerLink]="['/admin-clientes-editar', cliente.id]">
                 Editar
               </button>
 
