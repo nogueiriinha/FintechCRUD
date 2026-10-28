@@ -8,6 +8,12 @@
       Preencha os dados abaixo para criar seu cadastro.
     </p>
 
+    @if(clienteId){
+      <label for="id">ID</label>
+      <input class="input-simples" type="text" 
+      name="id" id="id" [ngModel]="cliente.id" disabled />
+    }
+
     <label for="cpf">CPF</label>
     <input
       class="input-simples"
